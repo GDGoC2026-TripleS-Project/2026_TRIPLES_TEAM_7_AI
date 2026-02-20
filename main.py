@@ -7,8 +7,8 @@ load_dotenv()
 
 app = FastAPI()
 
-app.include_router(extraction_router, prefix="/fastapi/extract")
-app.include_router(match_router, prefix="/fastapi/match/api")
+app.include_router(extraction_router, prefix="/fastapi")
+app.include_router(match_router, prefix="/fastapi")
 
 @app.get("/fastapi")
 def health_check():
