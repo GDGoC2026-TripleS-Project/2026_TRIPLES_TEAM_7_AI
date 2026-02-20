@@ -3,6 +3,7 @@ uvicorn[standard]
 httpx
 pydantic
 pdfplumber
+OpenAI
 konlpy
 rapidfuzz
 python-dotenv>=1.0.0

@@ -2,8 +2,8 @@ from __future__ import annotations
 from fastapi import HTTPException
 
 from match_ai.schemas.schemas import JobInfo, MatchResponse, MatchItem
-from services.scorer import fetch_pdf_text, extract_resume_keywords, calc_match_percent, build_match_context
-from services.groq_client import generate_comments
+from match_ai.services.scorer import fetch_pdf_text, extract_resume_keywords, calc_match_percent, build_match_context
+from match_ai.services.groq_client import generate_comments
 
 
 async def analyze_match(file_url: str, job: JobInfo) -> MatchResponse:
