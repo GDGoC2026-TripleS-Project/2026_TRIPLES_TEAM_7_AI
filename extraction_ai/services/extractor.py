@@ -5,9 +5,9 @@ from datetime import datetime
 
 from openai import OpenAI
 
-from crawlers.wanted_crawler import crawl_wanted_job
-from crawlers.jobkorea_crawler import crawl_jobkorea_job
-from crawlers.linkareer_crawler import crawl_linkareer_job
+from extraction_ai.crawlers.wanted_crawler import crawl_wanted_job
+from extraction_ai.crawlers.jobkorea_crawler import crawl_jobkorea_job
+from extraction_ai.crawlers.linkareer_crawler import crawl_linkareer_job
 
 
 # ── 공통 출력 스키마 ───────────────────────────────────────────────

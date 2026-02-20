@@ -5,6 +5,7 @@ pydantic
 pdfplumber
 OpenAI
 konlpy
+pytesseract
 rapidfuzz
 python-dotenv>=1.0.0
 selenium>=4.15.0

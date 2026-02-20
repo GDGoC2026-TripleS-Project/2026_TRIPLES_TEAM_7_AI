@@ -14,7 +14,7 @@ from selenium.webdriver.support import expected_conditions as EC
 # Tesseract 경로 설정 
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
-from crawlers.base_crawler import BaseCrawler, JobPosting
+from extraction_ai.crawlers.base_crawler import BaseCrawler, JobPosting
 
 class JobKoreaCrawler(BaseCrawler):
     
