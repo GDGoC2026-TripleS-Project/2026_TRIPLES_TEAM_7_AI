@@ -2,7 +2,6 @@ fastapi
 uvicorn[standard]
 httpx
 pydantic
-schemas
 pdfplumber
 konlpy
 rapidfuzz

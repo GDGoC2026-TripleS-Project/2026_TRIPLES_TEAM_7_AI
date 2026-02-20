@@ -7,7 +7,7 @@ import pdfplumber
 from konlpy.tag import Okt
 from rapidfuzz import fuzz
 
-from schemas.schemas import JobInfo
+from match_ai.schemas.schemas import JobInfo
 
 okt = Okt()
 

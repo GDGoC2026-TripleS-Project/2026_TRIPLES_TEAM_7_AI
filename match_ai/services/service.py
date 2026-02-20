@@ -1,7 +1,7 @@
 from __future__ import annotations
 from fastapi import HTTPException
 
-from schemas.schemas import JobInfo, MatchResponse, MatchItem
+from match_ai.schemas.schemas import JobInfo, MatchResponse, MatchItem
 from services.scorer import fetch_pdf_text, extract_resume_keywords, calc_match_percent, build_match_context
 from services.groq_client import generate_comments
 

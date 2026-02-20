@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from schemas.schemas import MatchRequest, MatchResponse
-from services.service import analyze_match
+from match_ai.schemas.schemas import MatchRequest, MatchResponse
+from match_ai.services.service import analyze_match
 
 router = APIRouter()
 
