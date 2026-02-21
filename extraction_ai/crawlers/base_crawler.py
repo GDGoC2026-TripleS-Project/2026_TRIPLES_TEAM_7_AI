@@ -67,7 +67,12 @@ class BaseCrawler(ABC):
             "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         )
         
-        service = Service(ChromeDriverManager().install())
+        # 🔥 이거 반드시 추가
+        options.binary_location = "/usr/bin/chromium"
+
+        # 🔥 webdriver_manager 제거
+        service = Service("/usr/bin/chromedriver")
+
         self.driver = webdriver.Chrome(service=service, options=options)
         self.wait = WebDriverWait(self.driver, 10)
         
