@@ -18,10 +18,11 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,       # 모든 곳을 허용하려면 ["*"]
+    # allow_origins=["*"] 대신 아래 설정을 사용하세요
+    allow_origin_regex="https?://.*",  # http 또는 https로 시작하는 모든 도메인 허용
     allow_credentials=True,
-    allow_methods=["*"],         # GET, POST, PUT, DELETE 등 모두 허용
-    allow_headers=["*"],         # 모든 헤더 허용
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 app.include_router(extraction_router, prefix="/fastapi")
