@@ -3,6 +3,7 @@ FROM python:3.9-bullseye
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y openjdk-11-jdk chromium && apt-get clean
+RUN apt-get install -y tesseract-ocr tesseract-ocr-kor
 
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ENV PATH=$JAVA_HOME/bin:$PATH
