@@ -12,6 +12,11 @@ async def extract_job(req: ExtractRequest):
     채용공고 URL → 크롤링 + 사이트별 AI 추출 → job_cards ERD 형식 반환
     지원 사이트: wanted.co.kr / jobkorea.co.kr / linkareer.com
     """
+    
+    print("==== 새 요청 ====")
+    print("요청 헤더:", request.headers)
+    print("요청 바디 raw:", await request.body())
+    print("받은 url:", req.url)
 
     try:
         site = detect_site(req.url)
