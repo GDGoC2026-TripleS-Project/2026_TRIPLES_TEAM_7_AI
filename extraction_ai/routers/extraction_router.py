@@ -14,8 +14,8 @@ async def extract_job(req: ExtractRequest):
     """
     
     print("==== 새 요청 ====")
-    print("요청 헤더:", request.headers)
-    print("요청 바디 raw:", await request.body())
+    #print("요청 헤더:", request.headers)
+    #print("요청 바디 raw:", await request.body())
     print("받은 url:", req.url)
 
     try:
