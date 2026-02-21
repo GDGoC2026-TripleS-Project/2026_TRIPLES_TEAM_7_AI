@@ -168,7 +168,7 @@ class JobKoreaCrawler(BaseCrawler):
             req_h = self.driver.execute_script("return arguments[0].scrollHeight", element)
 
             self.driver.set_window_size(req_w + 100, req_h + 500)
-            time.sleep(2) 
+            time.sleep(1) 
             
             self.driver.execute_script("arguments[0].scrollIntoView({block: 'start'});", element)
             time.sleep(1)
@@ -186,7 +186,7 @@ class JobKoreaCrawler(BaseCrawler):
             return ""
             
     def extract_job_posting(self, url: str) -> JobPosting:
-        time.sleep(10)
+        time.sleep(3)
         
         print("[INFO] 회사명 및 직무명 추출 중...")
         company_name = self._extract_company_name()
@@ -204,7 +204,7 @@ class JobKoreaCrawler(BaseCrawler):
 
         for idx, area in enumerate(core_elements):
             self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", area)
-            time.sleep(10)
+            time.sleep(3)
             
             all_role_texts.append(area.text)
             if self.use_ocr:
