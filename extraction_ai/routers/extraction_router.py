@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException
 
 from extraction_ai.schemas.schemas import ExtractRequest, JobCardResponse
 from extraction_ai.services.extractor import detect_site, crawl, extract_with_ai
+import traceback
 
 router = APIRouter()
 
