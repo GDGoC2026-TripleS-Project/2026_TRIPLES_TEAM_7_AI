@@ -26,6 +26,8 @@ async def extract_job(req: ExtractRequest):
     try:
         posting = crawl(req.url, site)
     except Exception as e:
+        print("=== CRAWL ERROR ===")
+        print(traceback.format_exc())  # 추가
         raise HTTPException(status_code=500, detail=f"크롤링 실패: {e}")
 
     if not posting:
@@ -34,6 +36,8 @@ async def extract_job(req: ExtractRequest):
     try:
         result = extract_with_ai(posting, site)
     except Exception as e:
+        print("=== AI 추출 ERROR ===")
+        print(traceback.format_exc())  # 추가
         raise HTTPException(status_code=500, detail=f"AI 추출 실패: {e}")
 
     return result
