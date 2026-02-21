@@ -67,8 +67,8 @@ class BaseCrawler(ABC):
             "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         )
         
-        service = Service(ChromeDriverManager().install())
-        self.driver = webdriver.Chrome(service=service, options=options)
+        self.driver = webdriver.Chrome(options=options) # 경로/Service 지정 불필요
+        self.wait = WebDriverWait(self.driver, 10)
         self.wait = WebDriverWait(self.driver, 10)
         
     def close_driver(self):
