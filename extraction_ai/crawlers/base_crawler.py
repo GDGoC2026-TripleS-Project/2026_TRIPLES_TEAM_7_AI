@@ -5,6 +5,7 @@ from datetime import datetime
 import json
 import time
 import os
+import platform
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -67,11 +68,13 @@ class BaseCrawler(ABC):
             "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         )
         
-        # 🔥 이거 반드시 추가
-        options.binary_location = "/usr/bin/chromium"
-
-        # 🔥 webdriver_manager 제거
-        service = Service("/usr/bin/chromedriver")
+        if platform.system() == "Linux":
+            # 배포 환경 (Railway, EC2 등)
+            options.binary_location = "/usr/bin/chromium"
+            service = Service("/usr/bin/chromedriver")
+        else:
+            # 로컬 (Windows/Mac) - webdriver_manager 자동 처리
+            service = Service(ChromeDriverManager().install())
 
         self.driver = webdriver.Chrome(service=service, options=options)
         self.wait = WebDriverWait(self.driver, 10)

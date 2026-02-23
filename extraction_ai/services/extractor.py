@@ -21,7 +21,7 @@ OUTPUT_SCHEMA = """
   "companyName": string,
   "employmentType": "FULL_TIME" | "CONTRACT" | "INTERN",
   "roleText": string,
-  "nececcaryStack": string[],
+  "necessaryStack": string[],
   "preferStack": string[],
   "salaryText": string,
   "locationText": string,
@@ -34,7 +34,7 @@ OUTPUT_SCHEMA = """
 - employmentType: 반드시 FULL_TIME / CONTRACT / INTERN 셋 중 하나 (단일값)
 - roleText: 담당업무를 하나의 문자열로 요약 (배열 금지)
 - experienceLevel: 경력 조건을 하나의 문자열로 (배열 금지)
-- nececcaryStack / preferStack: 기술명 배열
+- necessaryStack / preferStack: 기술명 배열
 - 값 없을 경우: 문자열 → ""  /  배열 → []
 """
 
@@ -80,7 +80,7 @@ PROMPT_JOBKOREA = """
 ▶ employmentType: "고용형태" 기준 → FULL_TIME / CONTRACT / INTERN 중 하나
 ▶ roleText: "담당업무"/"주요업무" 문단 내용을 하나의 문자열로 1~2문장으로 자연스럽게 요약 
 - 마침표(.)로 끝내지 말 것. 예) "서버 API 개발 및 유지보수, 결제 시스템 연동"
-▶ nececcaryStack: "지원자격"/"필수요건"/"자격요건" 문단에서 기술명 뽑거나 자연스럽게 요약 (최대 6개, 글자 수 10자 내외)
+▶ necessaryStack: "지원자격"/"필수요건"/"자격요건" 문단에서 기술명 뽑거나 자연스럽게 요약 (최대 6개, 글자 수 10자 내외)
 ▶ preferStack: 우대사항에서 기술명 또는 짧은 역량 표현으로 추출 (최대 6개)
   - 기술명: "Java", "AWS" 등 그대로
   - 역량/경험: "클린코드 구조 이해", "팀 단위 개발 경험" 처럼 10자 내외로 자연스럽게 요약
@@ -114,7 +114,7 @@ PROMPT_WANTED = """
 - "[이미지 추출 텍스트 (OCR)]" 영역은 무시
 - "포지션 상세"는 회사 소개 → roleText에 포함하지 않는다
 - "주요업무" 문단만 roleText로 사용
-- "자격요건" → nececcaryStack
+- "자격요건" → necessaryStack
 - "우대사항" → preferStack
 - "혜택 및 복지"에서 고용형태 및 근무일 추출
 
@@ -132,7 +132,7 @@ PROMPT_WANTED = """
 ▶ employmentType: FULL_TIME / CONTRACT / INTERN 중 하나
 ▶ roleText: "주요업무" 문단 내용을 하나의 문자열로 1~2문장으로 자연스럽게 요약
 - 마침표(.)로 끝내지 말 것. 예) "서버 API 개발 및 유지보수, 결제 시스템 연동"
-▶ nececcaryStack: 자격요건에서 기술 스택 뽑거나 자연스럽게 요약 (최대 6개, 글자 수 10자 내외)
+▶ necessaryStack: 자격요건에서 기술 스택 뽑거나 자연스럽게 요약 (최대 6개, 글자 수 10자 내외)
 ▶ preferStack: 우대사항에서 기술명 또는 짧은 역량 표현으로 추출 (최대 6개)
   - 기술명: "Java", "AWS" 등 그대로
   - 역량/경험: "클린코드 구조 이해", "팀 단위 개발 경험" 처럼 10자 내외로 자연스럽게 요약
@@ -167,7 +167,7 @@ PROMPT_LINKAREER = """
 - "[공고 요약]" 영역은 메타 정보 (D-숫자 마감 정보는 여기서 추출)
 - "[상세 내용]" 영역을 실제 채용공고 본문으로 간주
 - "담당업무" 문단만 roleText로 사용
-- "자격요건" → nececcaryStack
+- "자격요건" → necessaryStack
 - "우대사항" → preferStack
 - "채용형태" 또는 상세 제목에서 고용형태 추출
 
@@ -185,7 +185,7 @@ PROMPT_LINKAREER = """
 ▶ employmentType: FULL_TIME / CONTRACT / INTERN 중 하나
 ▶ roleText: "담당업무" 항목을 하나의 문자열로 1~2문장으로 자연스럽게 요약
 - 마침표(.)로 끝내지 말 것. 예) "서버 API 개발 및 유지보수, 결제 시스템 연동"
-▶ nececcaryStack: 자격요건에서 기술 키워드 뽑거나 자연스럽게 요약 (최대 6개, 글자 수 10자 내외)
+▶ necessaryStack: 자격요건에서 기술 키워드 뽑거나 자연스럽게 요약 (최대 6개, 글자 수 10자 내외)
 ▶ preferStack: 우대사항에서 기술명 또는 짧은 역량 표현으로 추출 (최대 6개)
   - 기술명: "Java", "AWS" 등 그대로
   - 역량/경험: "클린코드 구조 이해", "팀 단위 개발 경험" 처럼 10자 내외로 자연스럽게 요약

@@ -11,7 +11,7 @@ class JobCardResponse(BaseModel):
     companyName: Optional[str]
     employmentType: Optional[str]
     roleText: Optional[str]
-    nececcaryStack: Optional[list]
+    necessaryStack: Optional[list]
     preferStack: Optional[list]
     experienceLevel: Optional[str]
     salaryText: Optional[str]
