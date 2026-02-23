@@ -28,6 +28,6 @@ app.add_middleware(
 app.include_router(extraction_router, prefix="/fastapi")
 app.include_router(match_router, prefix="/fastapi")
 
-@app.get("/fastapi")
+@app.post("/fastapi")
 def health_check():
     return {"models": ["extraction", "match"]}
