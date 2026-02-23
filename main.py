@@ -12,8 +12,8 @@ app = FastAPI()
 origins = [
     "http://localhost:3000", 
     "http://localhost:8080",   # 로컬 개발 환경
-    "http://http://52.78.20.212",   # 실제 서비스 도메인
-    "https://http://52.78.20.212",
+    "http://piec.store",   # 실제 서비스 도메인
+    "https://piec.store",
 ]
 
 app.add_middleware(
